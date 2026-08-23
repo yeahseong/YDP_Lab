@@ -1,5 +1,5 @@
 ---
-title: YDPLab FastAPI (Docker)
+title: YDPLab Project (Docker)
 emoji: ⚡
 colorFrom: indigo
 colorTo: purple
@@ -41,6 +41,8 @@ app_port: 7860
 - 유형을 직관적으로 보여주는 키워드
 
 > 이 결과는 의학적·심리학적 진단이 아닌, 설문 응답 패턴을 바탕으로 만든 재미와 참고 목적의 데이터 분석 결과입니다.
+
+> 이 서비스는 2025 영도구 청년 동아리 활동 중 청년의 날 행사 부스 운영에 활용 되었으며 현재 데이터 수집이나 서버 관리 등은 이루어지고 있지 않습니다.
 
 ## 서비스 흐름
 
@@ -104,57 +106,6 @@ ydplabfast/
 └─ YDP_Lab_Project_Summary.md
 ```
 
-## 로컬 실행
-
-### 1. 저장소 준비
-
-```bash
-git clone <repository-url>
-cd ydplabfast
-```
-
-### 2. 가상환경과 패키지 설치
-
-Windows PowerShell:
-
-```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-macOS/Linux:
-
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### 3. 개발 서버 실행
-
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 7860
-```
-
-실행 후 아래 주소에서 확인할 수 있습니다.
-
-- 상태 확인: <http://localhost:7860/>
-- Swagger UI: <http://localhost:7860/docs>
-- ReDoc: <http://localhost:7860/redoc>
-
-> 애플리케이션 시작 시 `data/mz_processed.csv`를 읽어 군집 모델을 학습하므로 데이터 파일이 반드시 필요합니다.
-
-## Docker 실행
-
-```bash
-docker build -t ydplab-api .
-docker run --rm -p 7860:7860 ydplab-api
-```
-
-컨테이너가 시작되면 <http://localhost:7860/docs>에서 API를 테스트할 수 있습니다.
 
 ## API
 
@@ -199,7 +150,7 @@ docker run --rm -p 7860:7860 ydplab-api
 
 ### `POST /v1/questions`
 
-별도 버전의 분석 결과를 제공하는 엔드포인트입니다. 두 POST API의 응답 계약을 통합하는 작업이 향후 개선사항으로 남아 있습니다.
+테스트에 사용된 API 엔드포인트입니다.
 
 ## 모델 구성
 
