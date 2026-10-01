@@ -1,0 +1,17 @@
+# IDE
+.idea/
+.vs/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
